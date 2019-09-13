@@ -14,4 +14,3 @@ if tn in KREWES:
   rando(tn)
 else:
     print("Team not there")
-111
