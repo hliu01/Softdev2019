@@ -9,8 +9,9 @@ KREWES = {
 def rando(tn):
     print(random.choice(KREWES[tn]))
 
-tn = input("Enter team name: ") 
+tn = input("Enter team name: ")
 if tn in KREWES:
   rando(tn)
-else: 
-    print("Team not there") 
+else:
+    print("Team not there")
+111
