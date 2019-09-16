@@ -1,4 +1,7 @@
-import random
+#<Henry> <Liu>
+#SoftDev1 pd<9>
+#K<n> -- <Divine your Destiny!/CSV/Print occupations>
+#<2019>-<09>-<16>   
 import csv
 
 workersAndPercent = {}
