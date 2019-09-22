@@ -7,17 +7,17 @@ def hello_world():
     return "No!"
 
 
-@app.route("/eee")#assign following fxn to run when route requested
+@app.route("/sister")#assign following fxn to run when route requested
 def hi_world():
     print(__name__)#where will this go
-    return "No so!"
+    return "Hey"
 
 
 
-@app.route("/dd")#assign following fxn to run when route requested
+@app.route("/brother")#assign following fxn to run when route requested
 def hey_world():
     print(__name__)#where will this go
-    return "hey!"
+    return "yes"
 
 if __name__ == "__main__":
     app.debug = True

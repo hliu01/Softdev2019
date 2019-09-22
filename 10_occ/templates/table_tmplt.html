@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>
+      Occupations
+    </title>
+  </head>
+  <style>
+    table, th, tr {border: 1px solid black;}
+  </style>
+  <body>
+    <h1> K #10: Jinja Tuning </h1>
+    <b> Team Name: </b> Rubinstein
+    <br>
+    <b> Team Roster: </b> Tammy Chen & Henry Liu
+    <br>
+    <b> Description: </b> This is a Flask app that will generate an HTML page that will include the following:
+      <ul>
+        <li> an appropriate title </li>
+        <li> a descriptive heading </li>
+        <li> the team name and roster </li>
+        <li> a tablified version of the occupations data </li>
+        <li> randomly selected occupations shown at the top </li>
+      </ul>
+    <hr>
+    <b>Random Occupation:</b> {{ randOcc }}
+    <br>
+    <b>Tablified Occupations Data:</b>
+    <table>
+    <tr> <th> Job Class  </th> <th> Percentage </th><th> Get Started </th> </tr>
+    {% for item in collection %}
+    <tr>
+      <th>{{ item }}</th>
+      <th>{{ collection[item][0]}}</th>
+      <th>{{ collection[item][1]}}</th>
+    </tr>
+    {% endfor %}
+    <tr> <th> Total  </th> <th> 99.8 </th> </tr>
+  </table>
+</body>
+</html>
