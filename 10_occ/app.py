@@ -13,7 +13,7 @@ with open('occupations.csv') as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
     for row in readCSV: #for each row in the csv file
         if row[0] != 'Job Class': #as long as it's not the first row
-            workersAndPercent[row[0]] = [float(row[1]),row[2]] #turn value into a float
+            workersAndPercent[row[0]] = [float(row[1]),row[2]] #turn value into a float and assign a list to each job name
             #workersAndPercent[row[0]] = row[2]
     workersAndPercent.pop('Total',99) #pop off the last row
 
