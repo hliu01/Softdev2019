@@ -6,7 +6,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
-
+#imports
 app = Flask(__name__)
 
 @app.route("/")
@@ -14,6 +14,8 @@ def functions():
     return render_template(
     'form.html'
     )
+##link the starting page to the template, then connect it
+#to the form
 
 @app.route("/auth")
 def authenticate():
@@ -33,6 +35,8 @@ def authenticate():
     print("\n\n")
 
     return render_template('submited.html')
+    #when you get redireccted to auth, show them the submited
+    #the submited has python on it to show the username
 
 
 
