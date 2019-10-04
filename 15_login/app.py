@@ -10,39 +10,66 @@ from flask import redirect
 from flask import url_for
 #imports
 app = Flask(__name__)
-
+reason = ""
 @app.route("/")
 def dis_loginpage():
+    #global is a keyword that allows an user to modify a variable outside the current scope
+    global reason
     print(url_for("success"))
+    #Check to see if user entered username and password
     if ("username" in request.args) & ("password" in request.args):
         usernam = request.args["username"]
         passwor = request.args["password"]
+        #If password and username are correct,
         if (passwor == "1234") & (usernam == "Peglegs"):
             return redirect(url_for("success"))
+        #If password and username are incorrect,
+        elif (usernam != "Peglegs") & (passwor != "1234"):
+            reason = " Your username and password were both incorrect"
+            return redirect(url_for("try_again"))
+        #If username is incorrect,
+        elif (usernam != "Peglegs"):
+            reason = " Your username was incorrect"
+            return redirect(url_for("try_again"))
+        #If password is incorrect,
         else:
-            return redirect(url_for("try_again_please"))
+            reason = " Your password was incorrect"
+            return redirect(url_for("try_again"))
     return render_template(
-    'form.html'
-    )
+    'login.html'
+        )
 
-##link the starting page to the template, then connect it
-#to the form
-
+#Welcome page
 @app.route("/welcome")
 def success():
-    return "Welcome"
-    #when you get redireccted to auth, show them the submited
-    #the submited has python on it to show the username
-
-@app.route("/whoops")
-def try_again_please():
-    if ("username" in request.args) & ("password" in request.args):
-        usernam = request.args["username"]
-        passwor = request.args["password"]
-        if (passwor == "1234") & (usernam == "Peglegs"):
-            return redirect(url_for("success"))
     return render_template(
-    'loginError.html'
+        "loggedIn.html"
+        )
+
+#If password or username is incorrect
+@app.route("/whoops")
+def try_again():
+    global reason
+    if ("username" in request.args) & ("password" in request.args):
+            usernam = request.args["username"]
+            passwor = request.args["password"]
+            #If password and username are correct,
+            if (passwor == "1234") & (usernam == "Peglegs"):
+                return redirect(url_for("success"))
+            #If password and username are incorrect,
+            elif (usernam != "Peglegs") & (passwor != "1234"):
+                reason = " Your username and password were both incorrect"
+                return redirect(url_for("try_again"))
+            #If username is incorrect,
+            elif (usernam != "Peglegs"):
+                reason = " Your username was incorrect"
+                return redirect(url_for("try_again"))
+            #If password is incorrect,
+            else:
+                reason = " Your password was incorrect"
+                return redirect(url_for("try_again"))
+    return render_template(
+        'loginError.html',reasonforError=reason
     )
 
 
