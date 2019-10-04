@@ -20,18 +20,18 @@ def dis_loginpage():
     if ("username" in request.args) & ("password" in request.args):
         usernam = request.args["username"]
         passwor = request.args["password"]
-        #If password and username are correct,
+        #If password and username are correct, say so
         if (passwor == "1234") & (usernam == "Peglegs"):
             return redirect(url_for("success"))
         #If password and username are incorrect,
         elif (usernam != "Peglegs") & (passwor != "1234"):
             reason = " Your username and password were both incorrect"
             return redirect(url_for("try_again"))
-        #If username is incorrect,
+        #If username is incorrect, say so
         elif (usernam != "Peglegs"):
             reason = " Your username was incorrect"
             return redirect(url_for("try_again"))
-        #If password is incorrect,
+        #If password is incorrect, say so
         else:
             reason = " Your password was incorrect"
             return redirect(url_for("try_again"))
@@ -53,18 +53,18 @@ def try_again():
     if ("username" in request.args) & ("password" in request.args):
             usernam = request.args["username"]
             passwor = request.args["password"]
-            #If password and username are correct,
+            #If password and username are correct, say so
             if (passwor == "1234") & (usernam == "Peglegs"):
                 return redirect(url_for("success"))
-            #If password and username are incorrect,
+            #If password and username are incorrect, say so
             elif (usernam != "Peglegs") & (passwor != "1234"):
                 reason = " Your username and password were both incorrect"
                 return redirect(url_for("try_again"))
-            #If username is incorrect,
+            #If username is incorrect, say so
             elif (usernam != "Peglegs"):
                 reason = " Your username was incorrect"
                 return redirect(url_for("try_again"))
-            #If password is incorrect,
+            #If password is incorrect, say so
             else:
                 reason = " Your password was incorrect"
                 return redirect(url_for("try_again"))
