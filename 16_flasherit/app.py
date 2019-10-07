@@ -13,6 +13,7 @@ from flask import session
 import os
 #imports
 app = Flask(__name__)
+#hi
 #creates key
 app.secret_key = os.urandom(32)
 reason = ""
