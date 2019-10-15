@@ -62,7 +62,6 @@ FROM students, courses
 WHERE students.id = courses.id;
 '''
 foo = c.execute(q)
-for bar in foo:
-    print (foo)
+print (foo)
 db.commit() #save changes
 db.close()  #close database

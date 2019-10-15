@@ -1,7 +1,7 @@
-#Henry Liu and Biraj Chowdhury
+#Henry Liu and Nahi Khan and TaeJoon Kim
 #SoftDev1 pd9
-#K #17: No Trouble
-#2019-10-06
+#K8: Average
+#2019-10-14
 
 
 import sqlite3   #enable control of an sqlite database
@@ -62,7 +62,6 @@ FROM students, courses
 WHERE students.id = courses.id;
 '''
 foo = c.execute(q)
-for bar in foo:
-    print (foo)
+print (foo)
 db.commit() #save changes
 db.close()  #close database
