@@ -1,34 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Clyde "Thluffy" Sinclair
-       SoftDev pd0
+  <!-- Biraj  Chowdhury and Henry Liu
+       SoftDev pd9
        K20 -- CSS basics
        2019-11-01f
-
-	 WORK FILE for CSS 	
+	 WORK FILE for CSS
     -->
 
   <head>
     <meta charset="utf-8"/>
     <title>foo title</title>
+    <style>
+      body {
+	  background-color:Gray;
+      }
+      h1 {
+	  text-align:center;
+	  color:white;
+      }
+      .bigBox{
+	  display:block;
+	  overflow:auto;
+      }
+
+      #title{
+	  display:block;
+	  overflow:auto;
+	  background-color:LightGray;
+      }
+      #content{
+	  background-color:DarkGray;
+	  display:block;
+	  overflow:auto;
+      }
+      #sidebar{
+	  float:left;
+	  width:150px;
+	  padding:10px;
+      }
+      ul{
+	  list-style-type:none;
+      }
+      li{
+	  list-style-type:none;
+      }
+      a{
+	  color:white;
+	  text-decoration:none;
+      }
+      #stuff{
+	  float:right;
+	  width:1000px;
+	  padding:10px;
+      }
+      #bottom{
+	  background-color:DimGrey;
+	  display:block;
+	  overflow:auto;
+	  text-align:right;
+	  padding:10px;
+	  color:silver;
+      }
+
+    </style>
   </head>
-
   <body>
-    <h1>foo heading 1</h1>
-    <h3>nav foo</h3>
-    <ul>
-      <li><a href="">dis</a></li>
-      <li><a href="">dat</a></li>
-      <li><a href="">de udda ting</a></li>
-    </ul>
-    <h2>main foo heading</h2>
-    <p>tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk 
+    <div class="bigBox">
+      <div id="title">
+	<h1>foo heading 1</h1>
+      </div>
+      <div id="content">
+	<div id="sidebar">
+	  <h3>nav foo</h3>
+	  <ul>
+	    <li><a href="">dis</a></li>
+	    <li><a href="">dat</a></li>
+	    <li><a href="">de udda ting</a></li>
+	  </ul>
+	</div>
+	<div id="stuff">
+	  <h2>main foo heading</h2>
+	  <p>Spicy jalapeno minim culpa filet mignon deserunt pork loin, landjaeger meatball laboris do tail aute turkey. Magna ribeye fugiat capicola cow. Velit ut cupidatat, spare ribs qui esse drumstick doner occaecat. Ball tip pig pariatur ea irure spare ribs capicola. Shoulder laborum pork belly pig doner swine t-bone short ribs frankfurter ball tip picanha hamburger. Pork belly jowl elit pork loin dolore pork chop swine fugiat officia minim ut strip steak reprehenderit. Id in chicken, rump nostrud sunt eiusmod shankle drumstick.</p>
+    <p>
+      Turducken flank eiusmod dolor tail sed meatloaf beef ribs, in minim filet mignon ribeye enim landjaeger jerky. Tongue bacon ullamco occaecat sirloin laborum rump ea ipsum swine meatloaf veniam.
 
-      <br>
-      <br>
-
-      Copyright &copy; 2016 Clyde "Thluffy" Sinclair
-
+	    <br>
+	    <br>
+	</div>
+      </div>
+      <div id="bottom">
+	Copyright &copy; 2019 Henry Liu
+      </div>
+    </div>
   </body>
 
 </html>
