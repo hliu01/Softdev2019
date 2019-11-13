@@ -13,7 +13,7 @@ def root():
     u = request.urlopen("https://api.nasa.gov/planetary/apod?api_key=XVA4sqATNDCNJfAqfACjHrpzBNOgvWeaMsdH9W5z")
     response = u.read()
     data = json.loads(response)
-    return render_template("index.html", pic = data['url'])
+    return render_template("index.html", pic = data['url'], explanation = data['explanation'])
 
 if __name__ == "_main_":
     app.debug = True
