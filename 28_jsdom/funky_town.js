@@ -1,3 +1,11 @@
+/*
+Team prefix -- Henry Liu, Lauren
+SoftDev1 pd9
+K27 -- Sequential Progression
+2019-12-10
+*/
+
+
 var fibonacci = function(n){
   if (n == 0){
     return n;

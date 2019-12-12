@@ -1,3 +1,11 @@
+/*
+Team prefix -- Henry Liu and Calvin Choo
+SoftDev1 pd9
+K27 -- Sequential Progression
+2019-12-10
+*/
+
+
 var fact = function(args) {
   if (args == 1) return 1;
   else return args * fact(args - 1);
