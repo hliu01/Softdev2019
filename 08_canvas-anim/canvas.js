@@ -63,15 +63,16 @@ document.getElementById("movie").addEventListener("click", (e) => {
 });
 
 document.getElementById("stop").addEventListener("click", (e) => {
-    if (running == true) {
-        console.log("stop")
-        cancelAnimationFrame(reqId)
-        offset = (e.timeStamp + offset - timeStart)
-        running = false;
-    }
-    else{
-        console.log('already stopped')
-    }
+  if (running == true) {
+      console.log("stop")
+      cancelAnimationFrame(reqId)
+      offset = (e.timeStamp + offset - timeStart)
+      running = false;
+  }
+  else{
+      console.log('already stopped')
+  }
+
 });
 function drawCircle(timeNow){
   clear();
