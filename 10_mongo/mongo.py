@@ -36,9 +36,15 @@ def find_gender(gender):
     '''Returns all senators of specified gender'''
     return senators.find({"person.gender" : gender}, {"_id" : 0, "person.name" : 1})
 
-def find_website(name):
+def find_website(firstname):
     '''Returns website of all senators with a given first name'''
     return senators.find({"person.firstname" : firstname}, {"_id" : 0, "person.name" : 1, "website" : 1})
+
+def find_description(lastname):
+    '''Returns description of all senators with a given last name'''
+    return senators.find({"person.lastname" : lastname}, {"_id" : 0, "person.name" : 1, "description" : 1})
+
+
 
 
 print("-----FINDING ALL SENATORS IN NY-----")
