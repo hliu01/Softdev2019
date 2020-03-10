@@ -1,10 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>title</title>
-  </head>
-  <body>
-    {{ stuff }}
-  </body>
+    <head>
+      <meta charset="UTF-8">
+      <title>Meteorites</title>
+    </head>
+    <body>
+      <h2> Meteorites </h2>
+      <p> This site can let you find meteorites based on date found, size, and class  <br> </p>
+      <b>Lists all the meteorites classified with class_name given.</b>
+      <form action = "\meteoriteswithclass" method = "GET">
+        <input type = "text" name = "class_name"><br>
+        <input type = "submit" value = "Submit">
+      </form> <br> <br>
+
+      <b>List of all the meteorites that were found (that means someone found it rather than someone saw it falling)</b>
+      <form action = "\meteoritesfound" method = "GET">
+        <input type = "submit" value = "Submit"> <br>
+      </form> <br>
+
+      <b>Lists all the meteorites classified with class_name given limited by given maximum mass.</b>
+      <form action = "\meteoritesmax" method = "GET">
+        <input type = "text" name = "class_name"><br>
+        <input type = "number" name = "max_mass"> <br>
+        <input type = "submit" value = "Submit"> <br>
+      </form> <br>
+
+      <b>List of all meteorites of given class that fell before the given time</b>
+      <form action = "\meteoritesdate" method = "GET">
+        <input type = "text" name = "class_name"> <br>
+        <input type = "date" name = "date"> <br>
+        <input type = "submit" value = "Submit"> <br>
+      </form> <br>
+
+      <b>Finds all the meteorite that fell near your area given the location. Error of margin is 25 degree distance sqrt(a**2 + b**2)</b>
+      <form action = "\meteoritesfellnear" method = "GET">
+        <input type = "text" name = "location"> <br>
+        <input type = "submit" value = "Submit"> <br>
+      </form> <br>
+
+      {{Selection}}
+      <br>
+      {{meteoriteswithclass}}
+      {{meteoritesfound}}
+      {{meteoritesmax}}
+      {{meteoritesdate}}
+      {{meteoritesfellnear}}
+
+    </body>
 </html>

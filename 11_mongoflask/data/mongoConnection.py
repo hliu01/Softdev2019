@@ -1,7 +1,11 @@
+from flask import Flask, render_template
+from data import mongoConnection
 import json
 from pymongo import MongoClient
 import datetime
 import pprint
+
+app = Flask(__name__)
 
 TEAM_NAME = "tannedCows"
 
@@ -47,6 +51,9 @@ if meteoriteLandings.count() == 0:
         {"name":"Mumbai","lat":19.0760,"long":72.8777},
     ])
 
+@app.route("/")
+def root():
+    return render_template("index.html", stuff=mongoConnection.meteorites_with_class("Acapulcoite"))
 
 def meteorites_with_class(class_name: str) -> list:
     """
@@ -109,3 +116,9 @@ def meteorite_fell_near(location: str):
             output.append(entry)
 
     return output
+
+
+
+if __name__ == "__main__":
+    app.debug = True
+    app.run()
