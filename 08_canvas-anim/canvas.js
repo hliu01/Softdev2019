@@ -92,3 +92,40 @@ function drawCircle(timeNow){
   ctx.fill();
   reqId = requestAnimationFrame(drawCircle)
 };
+
+
+
+
+
+
+
+
+
+
+
+
+movieX += deltaX;
+movieY += deltaY;
+if(movieX === 0 || movieX === 600 - logoWidth){
+  deltaX *= -1;
+}
+if(movieY === 0|| movieY === 600 - logoHeight){
+  deltaY *= -1;
+}
+
+
+
+    var x = dot.getAttribute("cx");
+    var y = dot.getAttribute("cy"));
+    var inc_x = 1
+    var inc_y = 1
+    if(movieX === 0 || movieX === pic.getAttribute("width") - 1){
+      inc_x *= -1;
+    }
+    if(movieY === 0|| movieY === pic.getAttribute("height") - 1){
+      inc_y *= -1;
+    }
+    x += inc_x;
+    y += inc_y;
+    dot.setAttribute("cx", x);
+    dot.setAttribute("cy", y);
