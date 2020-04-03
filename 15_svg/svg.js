@@ -138,7 +138,7 @@ function mario(e){
         // console.log(dots[i].getAttribute('dx'));
         x += parseInt(dots[i].getAttribute('dx'));
         y += parseInt(dots[i].getAttribute('dy'));
-        color = colors[y % 11]
+        color = colors[Math.floor(Math.random() * 300) % 11]
         dots[i].setAttribute("cx", x);
         dots[i].setAttribute("cy", y);
         dots[i].setAttribute("fill", color);
